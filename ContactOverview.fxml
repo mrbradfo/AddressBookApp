@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="450.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="addr.book.view.ContactOverview">
+   <children>
+      <SplitPane dividerPositions="0.29707112970711297" layoutX="159.0" layoutY="54.0" prefHeight="497.0" prefWidth="490.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="173.0">
+               <children>
+                  <TableView fx:id="contactTable" layoutX="-29.0" layoutY="84.0" prefHeight="468.0" prefWidth="136.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                    <columns>
+                      <TableColumn fx:id="firstNameColumn" prefWidth="69.6000428199768" text="First" />
+                      <TableColumn fx:id="lastNameColumn" prefWidth="70.79998779296875" text="Last" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TextField fx:id="searchField" alignment="CENTER" layoutX="11.0" layoutY="51.0" onMouseClicked="#search" prefHeight="22.0" prefWidth="120.0" promptText="Search" style="-fx-background-radius: 20;" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="51.0" />
+                  <HBox alignment="CENTER" layoutX="4.0" prefHeight="51.0" prefWidth="160.0" spacing="5.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="addBtn" graphicTextGap="2.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#newContact" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #432769; -fx-background-radius: 3;" text="ADD" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee Bold" size="11.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="editBtn" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#editContact" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #432769; -fx-background-radius: 3;" text="EDIT" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee Bold" size="11.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delBtn" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#deleteContact" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #432769; -fx-background-radius: 3;" text="DEL&#10;ETE" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee Bold" size="11.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="450.0" style="-fx-background-color: #432769;">
+               <children>
+                  <Separator layoutY="38.0" prefHeight="13.0" prefWidth="382.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Label layoutX="94.0" layoutY="14.0" prefHeight="24.0" prefWidth="194.0" text="Contact Information" textFill="WHITE" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font></Label>
+                  <Text fill="WHITE" layoutX="22.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="93.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First :">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="24.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="95.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last :" wrappingWidth="33.9267578125">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Line endX="-41.199981689453125" layoutX="118.0" layoutY="77.0" startX="-53.800018310546875" stroke="WHITE" strokeWidth="2.0" />
+                  <Line endX="-53.199981689453125" endY="-10.300003051757812" layoutX="131.0" layoutY="76.0" startX="-53.199981689453125" startY="1.0" stroke="WHITE" strokeWidth="2.0" />
+                  <Line endX="-43.59999084472656" endY="1.0" layoutX="131.0" layoutY="64.0" startX="-53.199981689453125" startY="1.0" stroke="WHITE" strokeWidth="2.0" />
+                  <Line endX="-53.199981689453125" endY="-10.300003051757812" layoutX="131.0" layoutY="88.0" startX="-53.199981689453125" startY="1.0" stroke="WHITE" strokeWidth="2.0" />
+                  <Line endX="-43.59999084472656" endY="1.0" layoutX="131.0" layoutY="89.0" startX="-53.199981689453125" startY="1.0" stroke="WHITE" strokeWidth="2.0" />
+                  <TextField fx:id="lastNameField" editable="false" layoutX="138.0" layoutY="79.0" onMouseClicked="#editContact" prefHeight="23.0" prefWidth="158.0" style="-fx-background-color: #bba1dd;">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="emailField" editable="false" layoutX="138.0" layoutY="136.0" onMouseClicked="#editContact" prefHeight="25.0" prefWidth="158.0" style="-fx-background-color: #bba1dd;" />
+                  <Text fill="WHITE" layoutX="25.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="25.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="dateOBField" editable="false" layoutX="138.0" layoutY="235.0" onMouseClicked="#editContact" prefHeight="25.0" prefWidth="158.0" style="-fx-background-color: #bba1dd;" />
+                  <TextField fx:id="firstNameField" editable="false" layoutX="138.0" layoutY="54.0" onMouseClicked="#editContact" prefHeight="23.0" prefWidth="158.0" style="-fx-background-color: #bba1dd;">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font></TextField>
+                  <HBox layoutX="160.0" layoutY="287.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #BE81F7; -fx-background-radius: 3;" text="SAVE" textFill="WHITE">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="loadBtn" mnemonicParsing="false" onAction="#load" style="-fx-background-color: #BE81F7; -fx-background-radius: 3;" text="LOAD" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="addrField" editable="false" layoutX="138.0" layoutY="184.0" onMouseClicked="#editContact" prefHeight="25.0" prefWidth="158.0" style="-fx-background-color: #bba1dd;">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font></TextField>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
